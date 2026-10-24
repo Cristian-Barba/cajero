@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="recibo.js"></script>
+    <style>
+        /* Estilo extra para simular el corte del papel del recibo */
+        .ticket {
+            border-bottom: 3px dashed #ccc;
+        }
+
+        /* Solo se imprime el ticket blanco, forzando fondo en impresión */
+        @media print {
+            body {
+                background-color: white !important;
+            }
+
+            .bg-dark {
+                background-color: white !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <body class="bg-dark text-white">
+
+        <div class="d-flex justify-content-center align-items-center min-vh-100 py-4">
+
+            <section class="card bg-dark border-secondary shadow-lg p-4" style="width: 100%; max-width: 450px;">
+
+                <!-- Título del cajero (Se oculta al imprimir) -->
+                <div class="text-center mb-4 d-print-none">
+                    <h4 class="text-light">Transacción Exitosa</h4>
+                    <p class="text-muted mb-0">Toma tu comprobante</p>
+                </div>
+
+                <!-- CONTENEDOR DEL RECIBO -->
+                <div class="bg-light text-dark p-4 mx-auto mb-4 ticket shadow" style="width: 100%; max-width: 350px;">
+                    <div class="font-monospace" style="font-size: 0.9rem;">
+
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold mb-0">BANCO WEB</h5>
+                            <small>Cajero #0482</small>
+                        </div>
+
+                        <div class="mb-3 border-bottom border-dark pb-2">
+                            <div class="d-flex justify-content-between">
+                                <span>FECHA:</span>
+                                <!-- ID listo para tu JS -->
+                                <span id="reciboFecha">DD/MM/AAAA</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>HORA:</span>
+                                <!-- ID listo para tu JS -->
+                                <span id="reciboHora">00:00</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <p class="mb-1">TIPO DE OPERACIÓN:</p>
+                            <p class="fw-bold ms-3 mb-2">> CONSULTA DE SALDO</p>
+
+                            <div class="d-flex justify-content-between">
+                                <span>TARJETA:</span>
+                                <!-- ID listo para tu JS -->
+                                <span id="reciboTarjeta">**** **** **** 0000</span>
+                            </div>
+                        </div>
+
+                        <div class="text-center border-top border-dark pt-3 mt-3">
+                            <p class="mb-1">SALDO DISPONIBLE</p>
+                            <!-- ID listo para tu JS -->
+                            <h4 class="fw-bold mb-0" id="reciboSaldo">$ 0.00</h4>
+                        </div>
+
+                        <div class="text-center mt-4 text-muted" style="font-size: 0.8rem;">
+                            <p class="mb-0">Gracias por su preferencia.</p>
+                            <p>Conserve este recibo.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Botones de acción (Se ocultan al imprimir) -->
+                <div class="d-flex gap-2 d-print-none">
+                    <button onclick="window.print()" class="btn btn-primary w-50 py-2">Imprimir</button>
+                    <a href="MenuPrincipal.html" class="btn btn-outline-light w-50 py-2">Salir</a>
+                </div>
+
+            </section>
+        </div>
+
+    </body>
+</body>
+
+</html>
