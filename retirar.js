@@ -39,6 +39,7 @@ function alert2() {
     "</div>",
   ].join("");
   alertPlaceholder.append(wrapper);
+  document.getElementById("montoRetiro").value = "";
 }
 
 function retiro() {
