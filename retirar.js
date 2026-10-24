@@ -1,18 +1,12 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   if (event) event.preventDefault();
-//   let propiedades;
-//   // Nota personal, para mostrar las propiedades que tiene por ejemplo una etiqueta button necesito poner lo que esta abajo y dentro de los parentesis la etiqueta que quiero revisar
-//   propiedades = document.querySelectorAll("button");
-//   console.log(propiedades);
-//   let opciones = [];
-//   document.getElementById;
-// });
-
 function quitarMontoRapido() {
   let radios = document.querySelectorAll("input[name = montoRapido]");
   radios.forEach((radio) => {
     radio.checked = false;
   });
+}
+
+function limpiarManual() {
+  document.getElementById("montoRetiro").value = "";
 }
 
 function alert() {
