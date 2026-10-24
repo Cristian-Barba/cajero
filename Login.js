@@ -37,6 +37,19 @@ function alert(cuenta) {
   alertPlaceholder.append(wrapper);
 }
 
+function alert2() {
+  if (event) event.preventDefault();
+  const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = [
+    `<div class="alert theme-secondary" role="alert">`,
+    `   <p>Numero de cuenta y/o contraseña incorrectos</p>`,
+    '   <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>',
+    "</div>",
+  ].join("");
+  alertPlaceholder.append(wrapper);
+}
+
 function validacion() {
   if (event) event.preventDefault();
   let cuenta, pin, validacion1, validacion2;
@@ -47,7 +60,7 @@ function validacion() {
   if (validacion1 === cuenta && pin === validacion2) {
     window.location.href = "MenuPrincipal.html";
   } else {
-    alert("contraseña y/o usuario erroneo");
+    alert2();
   }
 }
 
